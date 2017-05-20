@@ -10,7 +10,7 @@ public class EventController : MonoBehaviour {
 
     public bool excuteLeaveRoomEvent(RoomInterface ri, Character chara) {
 
-        EventInterface eventI = ri.getEvent(constant.LEAVE_EVENT);
+        EventInterface eventI = ri.getRoomEvent(EventConstant.LEAVE_EVENT);
         //show ui 
         string selectCode = showMessageUi(eventI.getEventBeginInfo(), eventI.getSelectItem());
 

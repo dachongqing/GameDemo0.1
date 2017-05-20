@@ -10,8 +10,7 @@ public class SpeedLeveaRoomEvent : MonoBehaviour, EventInterface
 
     public String eventEndInfo;
 
-    private EventConstant ec;
-
+   
     private int minSpeedPoint;
 
     private int maxSpeedPoint;
@@ -22,6 +21,17 @@ public class SpeedLeveaRoomEvent : MonoBehaviour, EventInterface
 
     private String eventType;
 
+    public SpeedLeveaRoomEvent() {
+
+        minSpeedPoint = 3;
+
+        maxSpeedPoint = 6;
+
+        badSpeedPoint = 0;
+
+        eventType = EventConstant.LEAVE_EVENT;
+    }
+
 
     public EventResult excute(Character character, String selectCode)
     {
@@ -29,18 +39,19 @@ public class SpeedLeveaRoomEvent : MonoBehaviour, EventInterface
         EventResult er = new EventResult();
         //调用丢骰子UI
         //int dicePoint = callDiceController(character.getAbilityInfo[1]);
+        int dicePoint = 2;
         if (minSpeedPoint <= dicePoint)
         {
             er.setStatus(true);
             if (dicePoint >= maxSpeedPoint) {
-            er.setResultCode(ec.LEAVE_EVENT_SAFE);
+            er.setResultCode(EventConstant.LEAVE_EVENT_SAFE);
             }
           
         }
         else {
             if (dicePoint <= badSpeedPoint)
             {
-                er.setResultCode(ec.LEAVE_EVENT_BAD);
+                er.setResultCode(EventConstant.LEAVE_EVENT_BAD);
             }
             er.setStatus(false);
         }
@@ -60,11 +71,11 @@ public class SpeedLeveaRoomEvent : MonoBehaviour, EventInterface
     public string getEventEndInfo(string resultCode)
     {
 
-        if (resultCode == ec.LEAVE_EVENT_SAFE) {
+        if (resultCode == EventConstant.LEAVE_EVENT_SAFE) {
             eventEndInfo = "太好了， 你安全的离开了房间。";
         }
 
-        if (resultCode == ec.LEAVE_EVENT_BAD) {
+        if (resultCode == EventConstant.LEAVE_EVENT_BAD) {
             eventEndInfo = "很遗憾， 你没能离开房间，而且受到了伤害。";
         }
         return eventEndInfo;

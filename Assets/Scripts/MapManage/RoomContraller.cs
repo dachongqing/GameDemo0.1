@@ -24,6 +24,7 @@ public class RoomContraller : MonoBehaviour
     public RoomContraller ()
 	{
         genRoomType();
+        genRoomEvent();
     }
 
     private void genRoomType()
@@ -59,19 +60,20 @@ public class RoomContraller : MonoBehaviour
 
         //判定房间是处于什么位置 楼上 地面 楼下， 不能出现 有冲突的事件， 比如楼下不能出现掉落事件
 
-        if (room.getXYZ()[2] == roomConstant.ROOM_TYPE_GROUND)
-        {
+         if (room.getXYZ()[2] == RoomConstant.ROOM_TYPE_GROUND)
+          {
+        
+         room.setRoomEvent(events[0]);
 
             //  if () {
-            //      room.setEvent(getRandomEvent());
             //  }
-        }
-        else if (room.getXYZ()[2] == roomConstant.ROOM_TYPE_UP)
+       }
+       else if (room.getXYZ()[2] == RoomConstant.ROOM_TYPE_UP)
         {
 
-        }
-        else
-        {
+       }
+       else
+       {
         }
 
     }
@@ -92,8 +94,13 @@ public class RoomContraller : MonoBehaviour
 			RoomInterface ri = room.GetComponent (System.Type.GetType (roomType)) as RoomInterface;
 			ri.setXYZ (xyz);
 
-			//根据这房间门的数据，生成对应的门
-			if (door [0] == 1) {
+            //随机生成事件
+
+            setRoomEvents(ri);
+
+
+            //根据这房间门的数据，生成对应的门
+            if (door [0] == 1) {
 				//门启用
 				ri.northDoorEnable ();
 				//门属于这个房间

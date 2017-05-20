@@ -154,10 +154,10 @@ public class WoodDoor : MonoBehaviour, DoorInterface
 			if (opened) {
 				// 调用事件处理器处理事情
 
-//				bool result = eventController.excuteLeaveRoomEvent (getRoom (), roundController.getCurrentRoundChar ()); 暂时禁用 运行时有异常，对象未被实例化
+				bool result = eventController.excuteLeaveRoomEvent (getRoom (), roundController.getCurrentRoundChar ()); 
 
 				//非正式测试用，只考虑行动力足够
-				bool result = true;
+				
 
 				if (result == true) {
 					//离开门成功

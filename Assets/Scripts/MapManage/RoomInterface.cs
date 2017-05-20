@@ -29,9 +29,9 @@ public interface RoomInterface
 
     //获取当前房间的事件列表：支持一个房间拥有多个事件
     
-    EventInterface getEvent(string eventType);
+    EventInterface getRoomEvent(string eventType);
 
-    void setEvent(EventInterface ei);
+    void setRoomEvent(EventInterface ei);
 
     //获取当前房间的隐藏物品列表
 

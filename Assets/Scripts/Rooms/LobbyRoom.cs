@@ -11,7 +11,7 @@ public class LobbyRoom : MonoBehaviour, RoomInterface
 
 	[SerializeField]private int[] xyz;
 
-	private RoomConstant rc;
+
 
 	public GameObject northDoor;
 	public GameObject southDoor;
@@ -28,7 +28,7 @@ public class LobbyRoom : MonoBehaviour, RoomInterface
 
 	string RoomInterface.getRoomType ()
 	{
-		return rc.ROOM_TYPE_LOBBY;
+		return RoomConstant.ROOM_TYPE_LOBBY;
 	}
 
 
@@ -87,13 +87,14 @@ public class LobbyRoom : MonoBehaviour, RoomInterface
 	}
 
 
-    public EventInterface getEvent(string eventType)
+    public EventInterface getRoomEvent(string eventType)
     {
         return eventsList[eventType];
     }
 
-    public void setEvent(EventInterface ei)
+    public void setRoomEvent(EventInterface ei)
     {
+        Debug.Log("set event " + ei);
         eventsList.Add(ei.getEventType(), ei);
 
     }
