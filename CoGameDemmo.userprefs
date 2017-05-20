@@ -1,0 +1,22 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\initMap.cs">
+    <Files>
+      <File FileName="Assets\Scripts\initMap.cs" Line="47" Column="4" />
+      <File FileName="Assets\Scripts\RoomContraller.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\RoomInterface.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\BookRoom.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\LobbyRoom.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\DoorInterface.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\WoodDoor.cs" Line="1" Column="1" />
+      <File FileName="Assets\BugFix.txt" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\MapContraller.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Controls.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Character.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
