@@ -89,7 +89,15 @@ public class BookRoom : MonoBehaviour, RoomInterface
 
     public EventInterface getRoomEvent(string eventType)
     {
-        return eventsList[eventType];
+        if (eventsList.Count != 0)
+        {
+            return eventsList[eventType];
+
+        }
+        else
+        {
+            return null;
+        }
     }
 
     public void setRoomEvent(EventInterface ei)

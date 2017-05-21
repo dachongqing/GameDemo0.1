@@ -11,14 +11,21 @@ public class EventController : MonoBehaviour {
     public bool excuteLeaveRoomEvent(RoomInterface ri, Character chara) {
 
         EventInterface eventI = ri.getRoomEvent(EventConstant.LEAVE_EVENT);
-        //show ui 
-        string selectCode = showMessageUi(eventI.getEventBeginInfo(), eventI.getSelectItem());
 
-        EventResult result = eventI.excute(chara, selectCode);
+        if(eventI != null ) { 
+            //show ui 
+            string selectCode = showMessageUi(eventI.getEventBeginInfo(), eventI.getSelectItem());
 
-        showMessageUi(eventI.getEventEndInfo(result.getResultCode()), null);
+            EventResult result = eventI.excute(chara, selectCode);
 
-        return result.getStatus();
+            showMessageUi(eventI.getEventEndInfo(result.getResultCode()), null);
+
+            return result.getStatus();
+
+         } else
+        {
+            return true;
+        }
     }
 
     public bool excuteStayRoomEvent(RoomInterface ri, Character chara) {

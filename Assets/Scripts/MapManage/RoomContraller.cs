@@ -6,13 +6,13 @@ using System;
 public class RoomContraller : MonoBehaviour
 {
 
-	private Queue<String> groundRoomType = new Queue<String> ();
+    private Queue<String> groundRoomType = new Queue<String>();
 
-	private Queue<String> upRoomType = new Queue<String> ();
+    private Queue<String> upRoomType = new Queue<String>();
 
-	private Queue<String> downRoomType = new Queue<String> ();
+    private Queue<String> downRoomType = new Queue<String>();
 
-	private Dictionary<int[], RoomInterface> roomList = new Dictionary<int[], RoomInterface> ();
+    private Dictionary<int[], RoomInterface> roomList = new Dictionary<int[], RoomInterface>();
 
     private System.Random random = new System.Random();
 
@@ -21,8 +21,8 @@ public class RoomContraller : MonoBehaviour
     private RoomConstant roomConstant;
 
     //这个队列的长度，限制了房间最大数量
-    public RoomContraller ()
-	{
+    public RoomContraller()
+    {
         genRoomType();
         genRoomEvent();
     }
@@ -55,25 +55,43 @@ public class RoomContraller : MonoBehaviour
 
     }
 
+    private EventInterface getRandomEvent(String banEventType) {
+
+        EventInterface et = events[random.Next(events.Count)];
+        if (et.getEventType() == banEventType)
+        {
+            return getRandomEvent(banEventType);
+        }
+        else {
+            return et;
+        }
+
+           
+    }
+
     private void setRoomEvents(RoomInterface room)
     {
 
+        //只有30%的概率房间会生成事件
+        if (1 == random.Next(0, 3)) {
+
         //判定房间是处于什么位置 楼上 地面 楼下， 不能出现 有冲突的事件， 比如楼下不能出现掉落事件
+             if (room.getXYZ()[2] == RoomConstant.ROOM_TYPE_GROUND)
+              {
+                //对于地面事件 所有事件都可以发生
+                 room.setRoomEvent(getRandomEvent(null));
 
-         if (room.getXYZ()[2] == RoomConstant.ROOM_TYPE_GROUND)
-          {
-        
-         room.setRoomEvent(events[0]);
-
-            //  if () {
-            //  }
-       }
-       else if (room.getXYZ()[2] == RoomConstant.ROOM_TYPE_UP)
-        {
-
-       }
-       else
-       {
+                //  if () {
+                //  }
+             }
+           else if (room.getXYZ()[2] == RoomConstant.ROOM_TYPE_UP)
+            {
+                //对于楼上事件 
+           }
+           else
+           {
+                //地下事件
+            }
         }
 
     }
