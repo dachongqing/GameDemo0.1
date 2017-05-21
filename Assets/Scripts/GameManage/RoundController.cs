@@ -56,6 +56,7 @@ public class RoundController : MonoBehaviour
         //  setEndRound(ai);
         isRoundEnd = false;
         playChara = this.getNextCharecter();
+        playChara.setActionPointrolled(true);
         Debug.Log(playChara.getName() + " round this game");
     }
 
@@ -90,6 +91,8 @@ public class RoundController : MonoBehaviour
         if (isRoundEnd)
         {
             playChara = this.getNextCharecter();
+            playChara.setActionPointrolled(true);
+            
             Debug.Log(playChara.getName() + " round this game");
             isRoundEnd = false;
             if (playChara.isPlayer())
@@ -100,8 +103,8 @@ public class RoundController : MonoBehaviour
             }
             else
             {
-                StartCoroutine("charaMove");
             }
+                StartCoroutine("charaMove");
         }
 
 

@@ -85,6 +85,7 @@
     <Compile Include="Assets\Scripts\Events\EventInterface.cs" />
     <Compile Include="Assets\Scripts\Events\EventResult.cs" />
     <Compile Include="Assets\Scripts\Events\SpeedLeveaRoomEvent.cs" />
+    <Compile Include="Assets\Scripts\Events\SpeedfallRoomEvent.cs" />
     <Compile Include="Assets\Scripts\FunctionUnity.cs" />
     <Compile Include="Assets\Scripts\GameManage\RoundController.cs" />
     <Compile Include="Assets\Scripts\Gamers\Character.cs" />

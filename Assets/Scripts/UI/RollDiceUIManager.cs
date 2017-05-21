@@ -27,11 +27,19 @@ public class RollDiceUIManager : MonoBehaviour {
 
     public void rollBtnDown()
     {
-        //int speed = ply.getAbilityInfo()[1] + ply.getEffectBuff();
-        int speed = ply.getAbilityInfo()[1];
-        int res = diceRoll.calculateDice(speed, speed, 0);
-        ply.updateActionPoint(res);
-        //show ui message
-        //text.text = "行动力:" + res;
+        if (ply.ActionPointrolled())
+        {
+            //int speed = ply.getAbilityInfo()[1] + ply.getEffectBuff();
+            int speed = ply.getAbilityInfo()[1];
+            int res = diceRoll.calculateDice(speed, speed, 0);
+            ply.updateActionPoint(res);
+            ply.setActionPointrolled(false);
+            //show ui message
+            //text.text = "行动力:" + res;
+        }
+        else 
+            {
+            Debug.Log("你已经丢过行动力骰子");
+        }
     }
 }
