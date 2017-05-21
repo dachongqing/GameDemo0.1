@@ -39,7 +39,7 @@ public class SpeedLeveaRoomEvent : MonoBehaviour, EventInterface
         EventResult er = new EventResult();
         //调用丢骰子UI
         //int dicePoint = callDiceController(character.getAbilityInfo[1]);
-        int dicePoint = 2;
+        int dicePoint = 0;
         if (minSpeedPoint <= dicePoint)
         {
             er.setStatus(true);
@@ -52,6 +52,7 @@ public class SpeedLeveaRoomEvent : MonoBehaviour, EventInterface
             if (dicePoint <= badSpeedPoint)
             {
                 er.setResultCode(EventConstant.LEAVE_EVENT_BAD);
+                character.getAbilityInfo()[1] = character.getAbilityInfo()[1] - 2;
             }
             er.setStatus(false);
         }
@@ -77,6 +78,7 @@ public class SpeedLeveaRoomEvent : MonoBehaviour, EventInterface
 
         if (resultCode == EventConstant.LEAVE_EVENT_BAD) {
             eventEndInfo = "很遗憾， 你没能离开房间，而且受到了伤害。";
+
         }
         return eventEndInfo;
     }
