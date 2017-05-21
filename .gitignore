@@ -1,2 +1,7 @@
 /Library/*
 /Temp/*
+Library/CurrentLayout.dwlt
+Library/assetDatabase3
+Library/expandedItems
+*.dll
+*.mdb

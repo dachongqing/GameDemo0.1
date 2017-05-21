@@ -39,5 +39,7 @@ public interface Character  {
     //获取面板信息[力量，速度，知识，神志] 可以扩充
     int[] getAbilityInfo();
 
-	
+    bool ActionPointrolled();
+
+    void setActionPointrolled(bool actionPointrolled);
 }

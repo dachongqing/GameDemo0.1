@@ -15,6 +15,8 @@ public class Player : MonoBehaviour, NPC {
 
     private bool roundOver;
 
+    private bool actionPointrolled;
+
     public int getActionPoint()
     {
         return actionPoint;
@@ -66,7 +68,8 @@ public class Player : MonoBehaviour, NPC {
 
     public void roundStart()
     {
-       //可以roll点
+        //可以roll点
+        roundOver = false;
     }
 
     public void updateActionPoint(int actionPoint)
@@ -74,15 +77,26 @@ public class Player : MonoBehaviour, NPC {
         this.actionPoint = actionPoint;
     }
 
+    public bool ActionPointrolled() {
+        return actionPointrolled;
+    }
+
+    public void setActionPointrolled(bool actionPointrolled) {
+        this.actionPointrolled = actionPointrolled;
+    }
+     
+
     // Use this for initialization
     void Start () {
 		//游戏一开始 所处的房间 默认房间的坐标为 0,0,0
 		int[] roomXYZ={0,0,0};
 		setCurrentRoom(roomXYZ);
         abilityInfo = new int[] {5,3,6,8 };
-
+        this.actionPointrolled = false;
         Debug.Log ("Player.cs Start() 玩家进入默认房间");
-	}
+        playerName = "赵日天";
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
