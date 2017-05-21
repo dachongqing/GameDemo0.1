@@ -93,7 +93,7 @@ public class Player : MonoBehaviour, NPC {
 		setCurrentRoom(roomXYZ);
         abilityInfo = new int[] {5,3,6,8 };
         this.actionPointrolled = false;
-        Debug.Log ("Player.cs Start() 玩家进入默认房间");
+        Debug.Log ("赵日天 玩家进入默认房间");
         playerName = "赵日天";
 
     }
